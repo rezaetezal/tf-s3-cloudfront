@@ -21,7 +21,7 @@ variable "site_fqdn" {
 variable "common_tags" {
   default     = {}
   type        = map(string)
-  description = "(Optional) Map of tags applied to all applicable resources."
+  description = "Map of tags applied to all applicable resources."
 }
 
 #####################################################################
@@ -31,19 +31,19 @@ variable "common_tags" {
 variable "cloudfront_cache_behavior_compress" {
   default     = "true"
   type        = string
-  description = "(Optional) Whether you want CloudFront to automatically compress content for web requests that include Accept-Encoding: gzip in the request header."
+  description = "Whether you want CloudFront to automatically compress content for web requests that include Accept-Encoding: gzip in the request header."
 }
 
 variable "cloudfront_allowed_methods" {
   default     = ["*"]
   type        = list(string)
-  description = "Controls which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin."
+  description = "Which HTTP methods CloudFront processes and forwards to your Amazon S3 bucket or your custom origin."
 }
 
 variable "cloudfront_cached_methods" {
   default     = ["*"]
   type        = list(string)
-  description = "Controls whether CloudFront caches the response to requests using the specified HTTP methods."
+  description = "Whether CloudFront caches the response to requests using the specified HTTP methods."
 }
 
 variable "cloudfront_cache_policy_name" {
@@ -85,9 +85,3 @@ variable "cloutfront_price_class" {
     error_message = "Value must be one of: PriceClass_All, PriceClass_200, PriceClass_100"
   }
 }
-
-# variable "cloudfront_security_policy" {
-#   type        = string
-#   description = "Minimum version of the SSL protocol for HTTPS connections"
-#   default     = "TLSv1.2_2019"
-# }
